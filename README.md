@@ -13,12 +13,14 @@ In this assignment, you will use *space carving* to reconstruct the 3-D shape of
 #### Shape from silhouettes
 
 This type of problem is a direct application of the pinhole camera model when using multiple synchronized calibrated cameras. In this multi-view setup, a 3-D world point ${\bf w}$ projects onto an image point ${{\bf x}}_{j}$ on the $j^{th}$ camera. The pinhole-camera model for the  $j^{th}$ camera is: 
-```
-    \lambda \tilde{{\bf x}}_{j} = 
-    \Lambda_j
-    \begin{bmatrix}
-        \Omega_j & {\boldsymbol{\tau}_j}
-    \end{bmatrix} \tilde{{\bf w}}. 
+```math
+\begin{align}
+\lambda \tilde{{\bf x}}_{j} = 
+\Lambda_j
+\begin{bmatrix}
+  \Omega_j & {\boldsymbol{\tau}_j}
+  \end{bmatrix} \tilde{{\bf w}}. 
+\end{align}  
 ```
 In the basic space-carving algorithm, we usually want to reconstruct the foreground objects from a set of image silhouettes of the object. Figure 1 shows a set of silhouettes of a person seen by four different views. Figure 2 shows an example of segmentation using a method called *background subtraction*. 
 
